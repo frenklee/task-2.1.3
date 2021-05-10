@@ -11,9 +11,13 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "app")
 public class AppConfig {
     @Bean(name="animalsCage")
-    public AnimalsCage AnimalsCage() {
+    public AnimalsCage getAnimalsCage() {
         AnimalsCage animalsCage = new AnimalsCage();
-        animalsCage.getTimer();
         return animalsCage;
+    }
+    @Bean(name="timer")
+    public Timer getTimer(){
+        Timer timer = new Timer();
+        return timer;
     }
 }
